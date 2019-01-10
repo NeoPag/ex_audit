@@ -43,7 +43,6 @@ defmodule ExAudit.Schema do
 
   def insert_or_update(module, changeset, opts) do
     opts = augment_opts(opts)
-
     augment_transaction(module, fn ->
       result = Ecto.Repo.Schema.insert_or_update(module, changeset, opts)
 
